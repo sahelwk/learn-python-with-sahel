@@ -78,8 +78,10 @@ button { cursor:pointer; }
 .lesson-actions { display:flex; gap:8px; flex-wrap:wrap; justify-content:flex-end; }
 .meta-row { display:flex; flex-wrap:wrap; gap:9px; margin:18px 0 24px; }
 .pill { border:1px solid var(--line); background:var(--surface); color:var(--muted); border-radius:999px; padding:7px 11px; font-size:12px; }
-.slide { min-height:330px; padding:clamp(24px,4vw,48px); margin-top:18px; background:var(--surface); border:1px solid var(--line); border-radius:24px; box-shadow:var(--shadow); }
+.slide { position:relative; min-height:330px; padding:clamp(24px,4vw,48px); margin-top:18px; background:var(--surface); border:1px solid var(--line); border-radius:24px; box-shadow:var(--shadow); }
 .slide-kicker { color:var(--accent); text-transform:uppercase; letter-spacing:.12em; font-size:11px; font-weight:800; }
+.slide-image { display:block; position:absolute; top:clamp(24px,4vw,48px); right:clamp(24px,4vw,48px); width:220px; height:140px; object-fit:cover; border-radius:16px; margin:0; border:1px solid var(--line); box-shadow:0 8px 22px rgba(20,32,58,.12); }
+.slide:has(.slide-image) h2, .slide:has(.slide-image) p, .slide:has(.slide-image) ul { max-width:calc(100% - 260px); }
 .slide h2 { font-size:clamp(26px,3.3vw,42px); letter-spacing:-.045em; margin:14px 0 14px; }
 .slide p,.slide li { font-size:clamp(15px,1.6vw,19px); line-height:1.6; }
 .slide ul { padding-left:22px; max-width:780px; }
@@ -103,10 +105,11 @@ pre { margin:0; padding:18px; overflow:auto; font:14px/1.65 "Cascadia Code",Cons
 .presentation .slide p,.presentation .slide li { color:#dae2f8; }
 .presentation .slide-footer { margin-top:auto; }
 .presentation-top { display:flex; justify-content:space-between; align-items:center; color:#aab5d4; font-size:13px; }
+.presentation .slide-image { width:220px; height:140px; margin:0; border-color:#33466f; }
 .drawer-toggle { display:none; }
 body.dark { --bg:#0c1120; --surface:#131b2f; --surface-2:#1a2440; --text:#f1f5ff; --muted:#aab5cc; --line:#293653; --shadow:0 18px 50px rgba(0,0,0,.22); }
 @media (max-width:1050px) { .app-shell { grid-template-columns:240px 1fr; } .brand { min-width:auto; } .brand span { display:none; } .category-grid,.lesson-grid { grid-template-columns:repeat(2,1fr); } }
-@media (max-width:760px) { .app-shell { display:block; } .topbar { height:64px; padding:0 14px; gap:9px; } .drawer-toggle { display:grid; } .brand strong { font-size:12px; } .topbar-actions { gap:6px; } .search { width:auto; flex:1; } .search input { padding:9px 9px 9px 34px; } .topbar .btn span { display:none; } .sidebar { position:fixed; z-index:30; top:64px; left:0; bottom:0; width:min(330px,88vw); transform:translateX(-102%); transition:.25s; box-shadow:var(--shadow); max-height:none; } .sidebar.open { transform:translateX(0); } .main { padding:18px 14px 40px; } .hero { padding:24px; } .hero-art { display:none; } .metrics { grid-template-columns:repeat(2,1fr); } .category-grid,.lesson-grid,.support-grid { grid-template-columns:1fr; } .lesson-heading { flex-direction:column; } .lesson-actions { justify-content:flex-start; } .slide { padding:22px; min-height:400px; } }
+@media (max-width:760px) { .app-shell { display:block; } .topbar { height:64px; padding:0 14px; gap:9px; } .drawer-toggle { display:grid; } .brand strong { font-size:12px; } .topbar-actions { gap:6px; } .search { width:auto; flex:1; } .search input { padding:9px 9px 9px 34px; } .topbar .btn span { display:none; } .sidebar { position:fixed; z-index:30; top:64px; left:0; bottom:0; width:min(330px,88vw); transform:translateX(-102%); transition:.25s; box-shadow:var(--shadow); max-height:none; } .sidebar.open { transform:translateX(0); } .main { padding:18px 14px 40px; } .hero { padding:24px; } .hero-art { display:none; } .metrics { grid-template-columns:repeat(2,1fr); } .category-grid,.lesson-grid,.support-grid { grid-template-columns:1fr; } .lesson-heading { flex-direction:column; } .lesson-actions { justify-content:flex-start; } .slide { padding:22px; min-height:400px; } .slide-image, .presentation .slide-image { position:static; width:150px; height:96px; margin:0 0 16px auto; } .slide:has(.slide-image) h2, .slide:has(.slide-image) p, .slide:has(.slide-image) ul { max-width:none; } }
 
 .teacher-tab { white-space: nowrap; font-size: 12px; }
 .pinned-lessons { margin: 18px 0 8px; padding: 12px 8px; border: 1px solid var(--line); border-radius: 14px; background: rgba(79,109,245,.05); }
