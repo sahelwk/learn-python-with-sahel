@@ -59,6 +59,15 @@ button { cursor:pointer; }
 .category-card p { color:var(--muted); margin:0; font-size:12px; line-height:1.5; }
 .lesson-card { cursor:pointer; display:flex; gap:14px; align-items:flex-start; }
 .lesson-card:hover { border-color:#bbc7e9; }
+.slide-download-card { text-decoration:none; color:inherit; transition:.2s ease; }
+.slide-download-card:hover { transform:translateY(-3px); border-color:var(--accent); box-shadow:var(--shadow); }
+.download-btn { white-space:nowrap; text-decoration:none; }
+.download-menu { position:relative; }
+.download-menu summary { list-style:none; }
+.download-menu summary::-webkit-details-marker { display:none; }
+.download-menu-list { position:absolute; right:0; top:calc(100% + 8px); z-index:40; width:220px; max-height:360px; overflow:auto; padding:6px; border:1px solid var(--line); border-radius:14px; background:var(--surface); box-shadow:var(--shadow); }
+.download-menu-list a { display:flex; justify-content:space-between; gap:12px; padding:9px 11px; border-radius:9px; color:var(--text); text-decoration:none; font-size:12px; }
+.download-menu-list a:hover { background:var(--surface-2); color:var(--accent); }
 .lesson-number { width:38px; height:38px; display:grid; place-items:center; border-radius:12px; background:rgba(79,109,245,.1); color:var(--accent); font-weight:800; }
 .lesson-card h3 { margin:0 0 4px; font-size:14px; }
 .lesson-card p { margin:0; color:var(--muted); font-size:12px; line-height:1.45; }
@@ -123,4 +132,21 @@ body.dark { --bg:#0c1120; --surface:#131b2f; --surface-2:#1a2440; --text:#f1f5ff
 .teacher-panel-card h2 { margin: 10px 0 3px; }
 .teacher-panel-card p { color:var(--muted); line-height:1.6; font-size:13px; }
 .teacher-close { position:absolute; top:12px; right:14px; border:0; background:transparent; color:var(--muted); font-size:26px; cursor:pointer; }
+.teacher-details { margin-top:18px; color:var(--muted); font-size:13px; line-height:1.65; }
+.teacher-details p { margin:8px 0; }
+.teacher-details h3 { color:var(--text); font-size:15px; margin:16px 0 6px; }
+.teacher-details ul { padding-left:20px; margin:8px 0; }
+.teacher-detail-actions { display:flex; flex-wrap:wrap; gap:8px; margin-top:16px; }
+.teacher-detail-actions .btn { font-size:12px; }
+.profile .teacher-details { flex-basis:100%; border-top:1px solid var(--line); padding-top:14px; }
+.premium-slide { overflow:hidden; background:linear-gradient(135deg,var(--surface) 0%,rgba(79,109,245,.07) 55%,rgba(139,92,246,.1) 100%); border-color:rgba(79,109,245,.24); box-shadow:0 22px 55px rgba(79,109,245,.12); }
+.premium-slide::before { content:""; position:absolute; width:190px; height:190px; right:-70px; bottom:-80px; border-radius:50%; background:rgba(139,92,246,.12); pointer-events:none; }
+.premium-slide h2 { max-width:850px; }
+.homework-box { margin-top:14px; padding:14px 16px; border:1px solid rgba(79,109,245,.22); border-radius:14px; background:linear-gradient(135deg,var(--surface),rgba(79,109,245,.06)); box-shadow:0 8px 20px rgba(20,32,58,.04); }
+.homework-head { display:flex; align-items:flex-start; justify-content:space-between; gap:16px; }
+.homework-head h3 { margin:4px 0 0; font-size:15px; }
+.homework-head p { margin:0; color:var(--muted); font-size:12px; }
+.save-status { color:var(--success); font-size:11px; white-space:nowrap; padding-top:4px; }
+.homework-box textarea { display:block; width:100%; min-height:70px; resize:vertical; margin-top:10px; padding:10px; border:1px solid var(--line); border-radius:10px; outline:0; color:var(--text); background:var(--surface-2); line-height:1.45; font-size:12px; }
+.homework-box textarea:focus { border-color:var(--accent); box-shadow:0 0 0 3px rgba(79,109,245,.13); }
 @media (max-width:760px) { .teacher-tab { padding: 8px 9px; } .teacher-panel { padding: 72px 14px 14px; place-items:start center; } }
